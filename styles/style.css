@@ -164,7 +164,7 @@
 .table__text {
   line-height: 1.2;
   font-size: 18px;
-  font-weight: normal; 
+  font-weight: normal;
   margin: 20px 0 0;
 }
 
@@ -190,14 +190,14 @@
   font-weight: bold;
   margin: 0;
   padding-top: 100px;
-  text-align: center; 
+  text-align: center;
   width: 648px;
 }
 
 .feynman__subtitle {
   display: flex;
   position: relative;
-  text-align: center; 
+  text-align: center;
   line-height: 36px;
   font-size: 51px;
   font-weight: normal;
@@ -282,7 +282,6 @@
   color: #fff;
   margin: 0;
   position: relative;
-  display: flex;
   justify-content: center;
   padding-top: 60px;
   padding-bottom: 40px;
