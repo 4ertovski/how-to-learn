@@ -29,14 +29,14 @@
   left: 64px;
 }
 .header__title {
-   max-width: 730px;
+  max-width: 730px;
   line-height: 96px;
   font-size: 102px;
   font-weight: bold;
   align-self: center;
-  position: relative;
-  left: 64px;
   margin: 0;
+  padding: 64px;
+  z-index: 2;
 } 
 .header__subtitle{
   max-width: 388px;
@@ -47,11 +47,12 @@
   margin: 0;
   left: 64px;
   bottom: 30px;
+  z-index: 2;
 }
 .header__link {
   color: #2f80ed;
+  text-decoration: none;
 }
-
 .header__main-illustration {
   width: 765px;
   height: 608px;
@@ -71,7 +72,6 @@
   right: 0;
   z-index: 0;
 } 
-
 /* и элемента с модификатором вида ключ-значение */
 .table__cell {
   width: 250px;
@@ -94,7 +94,7 @@
   font-weight: normal;
   color: #2f80ed;
   margin: 0;
-  width: 175px;
+  max-width: 175px;
 }
 
 .two-columns__main-text {
@@ -103,7 +103,7 @@
   font-weight: normal;
   margin: 0;
   min-width: 784px;
-  width: 80%;
+  max-width: 80%;
 }
 .two-columns__paragraph{
   margin: 0 0 30px;
@@ -112,7 +112,7 @@
 .two-columns__paragraph:last-of-type {
   margin-bottom: 0;
 }
-.span-accent {
+.two-columns__span-accent {
   line-height: 34px;
   font-size: 24px;
   font-weight: bold;
@@ -125,19 +125,23 @@
   padding: 100px 0;
 }
 .section-title {
+  margin: 0; /* NB: Нужно сбросить стандартные стили браузера перед написанием собственных стилей
+  Стандартные стили браузера для текстового элемента, это margin, который нужно сбросить например в формате margin: 0;  в первой строчке свойств для селектора класса элемента. А далее уже писать собственные стили, в том числе и другие марджины, которые из-за специфичности CSS будут переназначены с 0, на те, которые будут написаны ниже внутри селектора.*/
   line-height: 1.15;
   font-size: 60px;
   font-weight: bold;
   text-align: center;
-  width: 60%;
+  max-width: 60%;
 }
 .section-subtitle {
+  margin: 20px 0 0;
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
   text-align: center;
-  top: 20px;
-  width: 60%;
+  max-width: 60%; /* изменено с width по совету ревьюера, NB: Фиксированное значение для текстовых элементов чревато некорректным отображением и усложнением кода. 
+  Особенно много неприятностей это добавит при создании верстки, адаптирующейся под различные экраны устройств. Фиксированные значение ширины приводят к тому, что вне зависимости от текстово содержимого и устройства просмотра - ширина будет равна только установленному в свойстве width значению. 
+  CSS предлагает более мягкое свойство - max-width. Старайтесь использовать его для текстовых элементов. Чтобы не потерять отображение верстки при небольшом количестве текста внутри элемента - используйте связку max-width и width:100%.*/
 }
 
 .table {
@@ -151,6 +155,8 @@
 }
 
 .table__heading {
+  margin: 0; /* NB: Нужно сбросить стандартные стили браузера перед написанием собственных стилей
+  Стандартные стили браузера для текстового элемента, это margin, который нужно сбросить например в формате margin: 0;  в первой строчке свойств для селектора класса элемента. А далее уже писать собственные стили, в том числе и другие марджины, которые из-за специфичности CSS будут переназначены с 0, на те, которые будут написаны ниже внутри селектора.*/
   font-weight: bold;
   line-height: 1.15;
   font-size: 24px;
@@ -168,7 +174,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("../images/feynman.png");
+  background-image: url("../images/feynman.png"); /* Подробнее о концепциях изображений в интернете: https://www.w3.org/WAI/tutorials/images/*/
   background-color: #f2f2f2;
   position: relative;
   background-position: left bottom;
@@ -178,40 +184,38 @@
   }
 
 .feynman__title {
-  display: flex;
-  position: relative;
+  /* display: flex; Это свойство для родительского контейнера.*/
   line-height: 1.15;
   font-size: 120px;
   font-weight: bold;
   margin: 0;
   padding-top: 100px;
   text-align: center;
-  width: 648px;
+  max-width: 648px;
 }
 
 .feynman__subtitle {
-  display: flex;
-  position: relative;
+ /* display: flex; Это свойство для родительского контейнера.*/
   text-align: center;
-  line-height: 36px;
-  font-size: 51px;
+  line-height: 51px;
+  font-size: 36px;
   font-weight: normal;
   margin: 70px 0 0 0;
   flex-direction: column;
 }
 
 .feynman__link {
-  display: flex;
-  line-height: 36px;
-  font-size: 51px;
+  /* display: flex; Это свойство для родительского контейнера.*/
+  line-height: 51px;
+  font-size: 36px;
   font-weight: normal;
   position: absolute;
   flex-direction: column;
-  margin: 70px 0 0 0;
+  margin: 0;
   top: 50%;
   right: 48px;
   color: #2f80ed;
- 
+  text-decoration: none; /* NB: не забывать сбрасывать подчеркивание для ссылок*/
 }
 .kaufman {
   display: flex;
@@ -220,28 +224,33 @@
   position: relative;
   overflow: hidden;
   background-color:  #1f1f1f;
-  padding: 0;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 .table_theme_dark {
   z-index: 1;
   margin-bottom: 90px;
 }
 .section-title_theme_dark {
+  margin: 0; /* NB: Нужно сбросить стандартные стили браузера перед написанием собственных стилей
+  Стандартные стили браузера для текстового элемента, это margin, который нужно сбросить например в формате margin: 0;  в первой строчке свойств для селектора класса элемента. А далее уже писать собственные стили, в том числе и другие марджины, которые из-за специфичности CSS будут переназначены с 0, на те, которые будут написаны ниже внутри селектора.*/
   line-height: 1.15;
   font-size: 60px;
   font-weight: bold;
   text-align: center;
-  width: 60%;
+  max-width: 60%;
   color: #fff;
   z-index: 1;
 }
 .section-subtitle_theme_dark {
+  margin: 0; /* NB: Нужно сбросить стандартные стили браузера перед написанием собственных стилей
+  Стандартные стили браузера для текстового элемента, это margin, который нужно сбросить например в формате margin: 0;  в первой строчке свойств для селектора класса элемента. А далее уже писать собственные стили, в том числе и другие марджины, которые из-за специфичности CSS будут переназначены с 0, на те, которые будут написаны ниже внутри селектора.*/
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
   text-align: center;
   top: 20px;
-  width: 60%;
+  max-width: 60%;
   color: #fff;
   z-index: 1;
 }
@@ -277,8 +286,10 @@
   color: #fff;
   margin: 0;
   position: relative;
+  box-sizing: border-box;
   justify-content: center;
-  padding-top: 60px;
+  padding-top: 60px; /* NB: до исправления высота блока 450px. Для того чтобы padding блока был включен в высоту блока, а не приплюсовывался к ней нужно использовать  свойство box-sizing: border-box; 
+  https://developer.mozilla.org/ru/docs/Web/CSS/box-sizing*/
   padding-bottom: 40px;
 }
 .footer__columns {
@@ -341,3 +352,5 @@
   min-height: 16px;
   padding-right: 10px;
 }
+
+/*Для текстовых элементов в этой проектной работе лучше использовать max-width вместо width, что будет очень ценно для адаптации страницы и при изменении контента внутри этих элементов*/
