@@ -1,0 +1,13 @@
+.feynman__link {
+  /* display: flex; Это свойство для родительского контейнера.*/
+  line-height: 51px;
+  font-size: 36px;
+  font-weight: normal;
+  position: absolute;
+  flex-direction: column;
+  margin: 0;
+  top: 50%;
+  right: 48px;
+  color: #2f80ed;
+  text-decoration: none; /* NB: не забывать сбрасывать подчеркивание для ссылок*/
+}
