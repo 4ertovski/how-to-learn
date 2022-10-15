@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  background-color: #1f1f1f;
+  min-height: 350px;
+  color: #fff;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+  justify-content: center;
+  padding-top: 60px; /* NB: до исправления высота блока 450px. Для того чтобы padding блока был включен в высоту блока, а не приплюсовывался к ней нужно использовать  свойство box-sizing: border-box; 
+  https://developer.mozilla.org/ru/docs/Web/CSS/box-sizing*/
+  padding-bottom: 40px;
+}
