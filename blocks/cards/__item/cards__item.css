@@ -4,6 +4,7 @@
   flex-direction: column;
   max-width: 240px;
 }
+
 .cards__item:nth-last-of-type(3) {
   margin-right: 0;
 }
