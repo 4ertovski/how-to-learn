@@ -82,8 +82,6 @@
 
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/footer/__columns/footer__columns.css');
-/* Никита, добрый день. Спасибо за комментарий про стили списков, я вроде бы разобралась в чем была ошибка.*/ 
-/*Извините, но не понимаю ваш комментарий про отсутствие в консоли этого импорта, у меня все отражается: VScode https://monosnap.com/file/8VkaPsW50ULuVvEPu1SAz8zrjbVua4 и консоль https://monosnap.com/file/MlXikjcOSB15oqgzGUlJ2YXKEDypkj */
 @import url('../blocks/footer/__column/footer__column.css');
 @import url('../blocks/footer/__column/_content/footer__column_content_copyright.css');
 @import url('../blocks/footer/__author/footer__author.css');

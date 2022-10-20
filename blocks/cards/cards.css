@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   max-width: 920px;
+  /*обнулить стили у списков*/
   padding: 0;
   margin: 0;
   list-style: none;
